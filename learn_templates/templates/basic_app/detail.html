@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'basic_app/index.html'%}
+{% block body_block %}
+  <h3> USER DETAILS </h3>
+  {% if data %}
+  <table class="table table-striped">
+    <thead>
+      <th> NAME </th>
+      <th>EMAIL </th>
+      <th> TEXT </th>
+    </thead>
+    {% for row in data %}
+      <tr>
+        <td> {{row.name}} </td>
+        <td> {{row.email}}  </td>
+        <td> {{row.text}} </td>
+      </tr>
+      {% endfor %}
+  </table>
+  {% else %}
+    <p> OOPS!!!!!!!! DATA IS NOT AVAILABLE </p>
+  {% endif %}
+{% endblock %}
